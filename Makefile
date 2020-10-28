@@ -13,7 +13,7 @@ HepLib.o : HepLib.cpp
 	heplib++ -fPIC -c HepLib.cpp $$(python3-config --cflags)
 
 _HepLib.so : HepLib.o
-	heplib++ -shared $(flatns) HepLib.o -o _HepLib.so $$(python3-config --ldflags) -lpython3.9
+	heplib++ -shared $(flatns) HepLib.o -o _HepLib.so $$(python3-config --ldflags --embed)
 
 clean:
 	rm -f HepLib.cpp HepLib.o _HepLib.so HepLib.py
