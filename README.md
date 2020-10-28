@@ -1,2 +1,2 @@
 # SWIG
-SWIG interface to other languages
+HepLib SWIG interface to other languages
