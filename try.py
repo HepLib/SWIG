@@ -2,6 +2,7 @@
 
 from HepLib import *
 
+
 ia = Index("ia");
 ib = Index("ib");
 
@@ -18,9 +19,33 @@ res = form(res);
 print(res);
 
 print(res.factor())
+
+print(res.subs(pow(w(1),2)==expr(13)))
+
+print(subs(res,pow(w(1),2)==expr(13)))
+
+print(call("sin",a))
+
 try:
     print(series(res,a+b,0))
 except:
-    print("Error captured.");
+    print("Expected Error.");
+    
+series(res,a+b,0)
+
+class replClass(MapFunction):
+    def __init__(self):
+        MapFunction.__init__(self)
+
+    def map(self, e):
+        if(e.match(SP(p1,p2))):
+            return b
+        else:
+            return e.map(self)
+        
+print(replClass()(SP(p1,p2)+a))
+
+    
+    
 
 
