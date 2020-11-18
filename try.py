@@ -51,6 +51,7 @@ xint = Integral();
 xint.Functions([x(1)+x(2)]);
 xint.Exponents([-2+ep]);
 xint.verb = 0;
+xint.verb = 100;
 xint.Evaluate();
 print(xint)
 
