@@ -59,7 +59,7 @@ p1 = Symbol("p1")
 p2 = Symbol("p2")
 
 int = Integral();
-int.Exponents([expr(1),expr(1),1+ep])
+int.Exponents([1,1,1])
 int.Propagators([pow(q1,2),pow(q1+p1,2),pow(q1+p1+p2,2)],[q1])
 int.Replacements([pow(p1,2)==expr(1),pow(p2,2)==expr(1),p1*p2==-expr(13)])
 int.verb = 100;
