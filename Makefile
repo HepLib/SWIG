@@ -18,4 +18,4 @@ _HepLib.so : $(HLS).o
 	heplib++ -shared $(flatns) $(HLS).o -o _HepLib.so $$(python3-config --ldflags --embed)
 
 clean:
-	rm -f $(HLS)* _HepLib.so HepLib.py
+	rm -rf $(HLS)* _HepLib.so HepLib.py __pycache__ xform*
