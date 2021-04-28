@@ -2,26 +2,20 @@
 
 from HepLib import *
 
-x = Symbol("x")
-y = Symbol("y")
+me = Symbol("me")
+mm = Symbol("mm")
+e = Symbol("e")
 
-class mapClass(MapFunction):
-    def __init__(self):
-        MapFunction.__init__(self)
+mu = Index("mu")
+nu = Index("nu")
 
-    def map(self, e):
-        if(e.match(pow(x,w(0))) and e.op(1).info("even")):
-            return pow(y,e.op(1)+2)
-        else:
-            return e.map(self)
-            
-expr1 = expr("x^4+x^3+x^2+x")
+p = Vector("p")
+P = Vector("P")
+k = Vector("k")
+K = Vector("K")
+q = Vector("q")
 
-print(expr1)
+print(IndexCA("a"))
 
-print(mapClass()(expr1))
-
-
-    
 
 
