@@ -13,7 +13,7 @@ proc.Model = """
 proc.In = "e[p],ebar[P]"
 proc.Out = "mubar[k],mu[K]"
 proc.Options = "onshell"
-proc.Loops = 1
+proc.Loops = 0
 
 st = {}
 st["p"] = Vector("p")
