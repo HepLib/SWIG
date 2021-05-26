@@ -39,6 +39,16 @@ set_LineTeX(Symbol("A"),"photon, edge label=$\\gamma$")
 
 Process.DrawPDF(amps, "amps.pdf")
 
+class feynman_rules_Class(MapFunction):
+    def __init__(self):
+        MapFunction.__init__(self)
+
+    def map(self, e):
+        if(isFunction(e,"OutField") or isFunction(e,"InField")):
+            return 1
+        else:
+            return e.map(self)
+
 
     
     
