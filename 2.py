@@ -1,31 +1,27 @@
 #!/usr/bin/env python3
 
+# python version for 0.cpp
+
 from HepLib import *
 
-me = Symbol("me")
-mm = Symbol("mm")
-e = Symbol("e")
+x = Symbol("x")
+y = Symbol("y")
+z = Symbol("z")
+n = Symbol("n")
+l1 = lst([x, y, x+z])
+e1 = pow(sin(x),n)
+print("l1 ->", l1)
+print("e1 ->", e1)
+tot = l1.nops()
+print("l1.nops() ->", tot)
+item1 = l1.op(0)
+print("1st item of l1 ->", item1)
+l1.let_op(2, e1)
+print("updated l1 ->", l1)
+tot = e1.nops()
+print("e1.nops() ->", tot)
+item2 = e1.op(1)
+print("2nd item of e1 ->", item2)
 
-mu = Index("mu")
-nu = Index("nu")
-r1 = Index("r1")
-r2 = Index("r2")
 
-p = Vector("p")
-P = Vector("P")
-k = Vector("k")
-K = Vector("K")
-q = Vector("q")
-
-a = IndexCA("a")
-b = IndexCA("b")
-c = IndexCA("c")
-d = IndexCA("d")
-i = IndexCF("i")
-j = IndexCF("j")
-k = IndexCF("k")
-
-#set_form_using_su3(False)
-res = form(SUNT(lst([a,b,a,b]),i,i))
-print(res.factor())
-
+print()

@@ -24,11 +24,16 @@ e1 = expr("p+P", st)
 print("expr from string:", e1)
 
 # expr from string as a list
-xs = expr("{a,b,c,x(1),y(2)}")
+xs = expr("{a,x(0),c,x(1),x(2)}")
 print("list:", xs)
 print("1st element:", xs.op(0))
 print("1st element:", xs[0])
 print()
+
+ss = exmap()
+ss[x(w())] = expr("sin(t)")+WF(w())
+xs2 = subs(xs, ss)
+print("new list:", xs2)
 
 # expr with list
 xs = expr([p,P,p+P])
@@ -46,6 +51,13 @@ print("exvec: ",  e1)
 
 e1 = exvec([p, P, p+P, P, p])
 print("exvec: ", e1)
+e1.subs(p>>1)
+print("exvec: ", e1)
+ss = exmap()
+ss[P] = expr("sin(t)")
+e1.subs(ss)
+print("exvec: ", e1)
+
 
 print()
 
@@ -75,3 +87,26 @@ e3 = exmap({P:P,p:p})
 print("exmap: ", e3)
 
 print()
+
+
+# expr with integer
+#----------------------
+x = Symbol("x")
+print(pow(x,3))
+print(3*x)
+print(3+x)
+print(x/3)
+print(expr(3)/x)
+
+# garRead & garWrite
+#----------------------
+data = {}
+data["1"] = expr("a+b")
+data["2"] = expr("sin(t)")
+garWrite(data, "g1.gar")
+garWrite("g2.gar", data)
+
+data = garReadAll("g1.gar")
+for k in data:
+    print(k,":",data[k])
+print(data["2"]+sin(Symbol("z")))
