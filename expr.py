@@ -58,6 +58,10 @@ ss[P] = expr("sin(t)")
 e1.subs(ss)
 print("exvec: ", e1)
 
+print()
+print("test iterator for exvec:")
+for item in e1:
+    print("exvec item:", item)
 
 print()
 
@@ -74,6 +78,11 @@ e2 = exset([p, P, p+P, P, p])
 print("exset: ", e2)
 
 print()
+print("test iterator for exset:")
+for item in e2:
+    print("exset item:", item)
+
+print()
 
 # test exmap
 #----------------------
@@ -83,8 +92,19 @@ e3[P] = expr(1)
 e3[P] = P
 print("exmap: ", e3)
 
+print()
+print("test iterator for exmap:")
+for kv in e3:
+    print("exmap item:", kv.first,"->",kv.second)
+print()
+
 e3 = exmap({P:P,p:p})
 print("exmap: ", e3)
+
+print()
+print("test iterator for exmap:")
+for kv in e3:
+    print("exmap item:", kv.first,"->", kv.second)
 
 print()
 
