@@ -2,6 +2,16 @@
 
 from HepLib import *
 
+# cout & hout
+
+e0 = expr("pow(x+y,3)")
+co = cout()
+ho = hout()
+ho << "e0 = " << e0 << endl
+ho << "expanded: " << e0.expand() << endl << endl
+co << "e0 = " << e0 << endl
+co << "expanded: " << e0.expand() << endl << endl
+
 # expr as key in dict
 p = Vector("p")
 P = Vector("P")
@@ -9,10 +19,10 @@ dict = {}
 dict[p] = p
 dict[2*p-p] = 1
 dict[2*p-P] = P
-print("expr as key in dictionary:")
+ho << ("expr as key in dictionary:") << endl
 for k in dict:
-    print("key =", k, " & value =", dict[k])
-print()
+    ho << "key = " << k << " & value = " << dict[k] << endl
+ho << endl
 
 # expr from string with dict
 p = Vector("p")
@@ -21,7 +31,7 @@ st = {}
 st["p"] = p
 st["P"] = P
 e1 = expr("p+P", st)
-print("expr from string:", e1)
+ho << "expr from string: " << e1 << endl
 
 # expr from string as a list
 xs = expr("{a,x(0),c,x(1),x(2)}")
@@ -51,6 +61,7 @@ e1.push_back(P)
 e1.push_back(p)
 e1.push_back(P)
 print("exvec: ",  e1)
+ho << BOLDYELLOW << "from hout: " << e1 << RESET << endl
 
 e1 = exvec([p, P, p+P, P, p])
 print("exvec: ", e1)
@@ -79,6 +90,7 @@ print("exset: ", e2)
 
 e2 = exset([p, P, p+P, P, p])
 print("exset: ", e2)
+ho << BOLDYELLOW << "from hout: " << e2 << RESET << endl
 
 print()
 print("test iterator for exset:")
@@ -94,6 +106,7 @@ e3[p] = p + P
 e3[P] = expr(1)
 e3[P] = P
 print("exmap: ", e3)
+ho << BOLDYELLOW << "from hout: " << e3 << '\033[0m' << endl
 
 print()
 print("test iterator for exmap:")
