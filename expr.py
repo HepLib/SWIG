@@ -30,8 +30,11 @@ print("1st element:", xs.op(0))
 print("1st element:", xs[0])
 print()
 
+for item in xs:
+    print("item in expr:", item)
+
 ss = exmap()
-ss[x(w())] = expr("sin(t)")+WF(w())
+ss[x(w)] = expr("sin(t)")+WF(w)
 xs2 = subs(xs, ss)
 print("new list:", xs2)
 

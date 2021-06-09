@@ -2,8 +2,6 @@
 
 from HepLib import *
 
-I = expr("I")
-
 A = Symbol("A")
 e = Symbol("e")
 ebar = Symbol("ebar")
@@ -80,7 +78,6 @@ class ClassFR(MapFunction):
         else:
             return e.map(self)
 
-print(LI(expr(1)))
 amps_FR = ClassFR()(amps[0])
     
 print("amps_FR: ")

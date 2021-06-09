@@ -9,9 +9,6 @@ q = Symbol("q")
 p1 = Symbol("p1")
 p2 = Symbol("p2")
 s = Symbol("s")
-ep = Symbol("ep")
-I = expr("I")
-Pi = expr("Pi")
 
 fp = FeynmanParameter()
 fp.LoopMomenta = exvec([k,r,q]);

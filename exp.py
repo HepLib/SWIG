@@ -12,11 +12,6 @@ p5 = Symbol("p5")
 m = Symbol("m")
 s = Symbol("s")
 
-Pi = expr("Pi")
-Euler = expr("Euler")
-I = expr("I")
-ep = expr("ep")
-
 fp = FeynmanParameter()
     
 fp.LoopMomenta = exvec([ k ])

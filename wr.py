@@ -5,9 +5,6 @@
 from HepLib import *
 
 xint = XIntegrand()
-ep = Symbol("ep")
-I = expr("I")
-Pi = expr("Pi")
     
 wra = WRA(Pi/5)
 
