@@ -12,7 +12,7 @@ $(HLS).cpp:
 	swig -python -c++ -o $(HLS).cpp $$(heplib-config --prefix)/include/HepLib.i
 
 $(HLS).o : $(HLS).cpp
-	heplib++ -fPIC -c $(HLS).cpp $$(python3-config --cflags)
+	heplib++ -fPIC -c $(HLS).cpp $$(python3-config --cflags) -O0
 
 _HepLib.so : $(HLS).o
 	heplib++ -shared $(flatns) $(HLS).o -o _HepLib.so $$(python3-config --ldflags --embed)
