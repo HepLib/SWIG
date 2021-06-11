@@ -4,13 +4,15 @@ from HepLib import *
 
 # cout & hout
 
+cc = BOLDYELLOW
+
 e0 = expr("pow(x+y,3)")
 co = cout()
 ho = hout()
-ho << "e0 = " << e0 << endl
-ho << "expanded: " << e0.expand() << endl << endl
-co << "e0 = " << e0 << endl
-co << "expanded: " << e0.expand() << endl << endl
+ho << cc << "ho e0: " << RESET << e0 << endl
+ho << cc << "ho expanded: " << RESET << e0.expand() << endl << endl
+co << cc << "co e0: " << RESET << e0 << endl
+co << cc << "co expanded: " << RESET << e0.expand() << endl << endl
 
 # expr as key in dict
 p = Vector("p")
@@ -19,9 +21,10 @@ dict = {}
 dict[p] = p
 dict[2*p-p] = 1
 dict[2*p-P] = P
-ho << ("expr as key in dictionary:") << endl
+ho << cc << ("expr as key in dictionary:") << RESET << endl
 for k in dict:
-    ho << "key = " << k << " & value = " << dict[k] << endl
+    ho << cc << "key = " << RESET << k
+    ho << cc << " & value = " << RESET << dict[k] << endl
 ho << endl
 
 # expr from string with dict
@@ -31,27 +34,27 @@ st = {}
 st["p"] = p
 st["P"] = P
 e1 = expr("p+P", st)
-ho << "expr from string: " << e1 << endl
+ho << cc << "expr from string: " << RESET << e1 << endl
 
 # expr from string as a list
 xs = expr("{a,x(0),c,x(1),x(2)}")
-print("list:", xs)
-print("1st element:", xs.op(0))
-print("1st element:", xs[0])
-print()
+ho << cc << "list: " << RESET << xs << endl
+ho << cc << "1st element: " << RESET << xs.op(0) << endl
+ho << cc << "1st element: " << RESET << xs[0] << endl << endl
 
 for item in xs:
-    print("item in expr:", item)
+    ho << cc << "item in expr: " << RESET << item << endl
+ho << endl
 
 ss = exmap()
 ss[x(w)] = expr("sin(t)")+WF(w)
 xs2 = subs(xs, ss)
-print("new list:", xs2)
+ho << cc << "new list: " << RESET << xs2 << endl
 
 # expr with list
 xs = expr([p,P,p+P])
-print("expr with list:", xs)
-print()
+ho << cc << "expr with list:" << RESET << xs << endl
+ho << endl
 
 # test exvec
 #----------------------
@@ -60,24 +63,23 @@ e1.push_back(p)
 e1.push_back(P)
 e1.push_back(p)
 e1.push_back(P)
-print("exvec: ",  e1)
-ho << BOLDYELLOW << "from hout: " << e1 << RESET << endl
+ho << cc << "exvec: " << RESET << e1 << endl
+ho << cc << "from hout: " << RESET << e1 << endl
 
 e1 = exvec([p, P, p+P, P, p])
-print("exvec: ", e1)
+ho << cc << "exvec: " << RESET << e1 << endl
 e1.subs(p>>1)
-print("exvec: ", e1)
+ho << cc << "exvec: " << RESET << e1 << endl
 ss = exmap()
 ss[P] = expr("sin(t)")
 e1.subs(ss)
-print("exvec: ", e1)
+ho << cc << "exvec: " << RESET << e1 << endl
+ho << endl
 
-print()
-print("test iterator for exvec:")
+ho << cc << "test iterator for exvec:" << RESET << endl
 for item in e1:
-    print("exvec item:", item)
-
-print()
+    ho << cc << "exvec item:" << RESET << item << endl
+ho << endl
 
 # test exset
 #----------------------
@@ -86,18 +88,17 @@ e2.insert(p)
 e2.insert(P)
 e2.insert(p)
 e2.insert(P)
-print("exset: ", e2)
+ho << cc << "exset: " << RESET << e2 << endl
 
 e2 = exset([p, P, p+P, P, p])
-print("exset: ", e2)
-ho << BOLDYELLOW << "from hout: " << e2 << RESET << endl
+ho << cc << "exset: " << RESET << e2 << endl
+ho << cc << "from hout: " << e2 << RESET << endl
+ho << endl
 
-print()
-print("test iterator for exset:")
+ho << cc << "test iterator for exset:" << endl
 for item in e2:
-    print("exset item:", item)
-
-print()
+    ho << cc << "exset item:" << RESET << item << endl
+ho << endl
 
 # test exmap
 #----------------------
@@ -105,37 +106,28 @@ e3 = exmap()
 e3[p] = p + P
 e3[P] = expr(1)
 e3[P] = P
-print("exmap: ", e3)
-ho << BOLDYELLOW << "from hout: " << e3 << '\033[0m' << endl
+ho << cc << "exmap: " << RESET << e3 << endl
+co << cc << "from cout: " << RESET << e3 << endl
+ho << endl
 
-print()
-print("test iterator for exmap:")
+ho << cc << "test iterator for exmap:" << endl
 for kv in e3:
-    print("exmap item:", kv.first,"->",kv.second)
-print()
+    ho << cc << "exmap item: " << RESET << kv.first << " -> " << kv.second << endl
+ho << endl
 
 e3 = exmap({P:P,p:p})
-print("exmap: ", e3)
+ho << cc << "exmap: " << RESET << e3 << endl
+ho << endl
 
-print()
-print("test iterator for exmap:")
+ho << cc << "test iterator for exmap:" << endl
 for kv in e3:
-    print("exmap item:", kv.first,"->", kv.second)
+    ho << cc << "exmap item: " << RESET << kv.first << " -> " << kv.second << endl
+ho << endl
 
-print()
-
-
-# expr with integer
-#----------------------
-x = Symbol("x")
-print(pow(x,3))
-print(3*x)
-print(3+x)
-print(x/3)
-print(expr(3)/x)
 
 # garRead & garWrite
 #----------------------
+ho << cc << "test garWrite & garRead:" << RESET << endl
 data = {}
 data["1"] = expr("a+b")
 data["2"] = expr("sin(t)")
@@ -144,5 +136,7 @@ garWrite("g2.gar", data)
 
 data = garReadAll("g1.gar")
 for k in data:
-    print(k,":",data[k])
-print(data["2"]+sin(Symbol("z")))
+    ho << k << " -> " << data[k] << endl
+ho << data["2"]+sin(Symbol("z")) << endl
+ho << RunOS("rm g1.gar g2.gar") << endl
+
