@@ -1,0 +1,25 @@
+{
+{
+F({q1^2+(-2)*p*q1},{1}),
+-tgamma(-1+ep)*pow(m,2*(1-ep))*I*pow(Pi,2-ep)*pow(2*Pi,2*ep-4)},
+
+{F({m^2+q1^2-2*p*q1,q2^2-2*p*q2,m^2+q1^2+q2^2-2*p*q1+2*p*q2-2*q1*q2},{1,1,1}),
+pow(2, -2*(4 - 2*ep))*pow(exp(1), -2*ep*Euler)*pow(m, 2 - 4*ep)*pow(Pi, 4 - 2*(4 - 2*ep) - 2*ep)*(-11/8 - pow(ep, -2)/2 - (5*pow(ep, -1))/4 - (5*pow(Pi, 2))/12 - ep*(-55/16 + (25*pow(Pi, 2))/24 + (11*zeta(3))/3))
+},
+
+{F({q1^2-2*p*q1,3*m^2+q2^2+4*p*q2},{1,1}), 
+-(pow(2, -2*(4 - 2*ep))*pow(exp(1), -2*ep*Euler)*pow(m, 4 - 4*ep)*pow(Pi, 4 - 2*(4 - 2*ep) - 2*ep)*(3 + pow(ep, -2) + 2*pow(ep, -1) + pow(Pi, 2)/6 + pow(ep, 2)*(5 + pow(Pi, 2)/2 + (7*pow(Pi, 4))/360 - (4*zeta(3))/3) + ep*(4 + pow(Pi, 2)/3 - (2*zeta(3))/3)))
+},
+
+{F({q1^2+q2^2-2*p*q1+2*p*q2-2*q1*q2,-m^2+q2^2,3*m^2+q1^2-4*p*q1},{1,1,1}),
+pow(2, -2*(4 - 2*ep))*pow(exp(1), -2*ep*Euler)*pow(m, 2 - 4*ep)*pow(Pi, 4 - 2*(4 - 2*ep) - 2*ep)*(-59/8 - (3*pow(ep, -2))/2 - (17*pow(ep, -1))/4 - pow(Pi, 2)/4 + pow(ep, 2)*(1117/32 - (475*pow(Pi, 2))/48 + 8*log(2)*pow(Pi, 2) - (7*pow(Pi, 4))/240 - (151*zeta(3))/6) - ep*(65/16 + (49*pow(Pi, 2))/24 - zeta(3)))
+},
+
+{F({q1^2-2*p*q1,m^2+q1^2+q2^2-2*p*q1+2*p*q2-2*q1*q2,3*m^2+q2^2+4*p*q2},{1,1,2}), 
+-(pow(2, -2*(4 - 2*ep))*pow(exp(1), -2*ep*Euler)*pow(m, -4*ep)*pow(Pi, 4 - 2*(4 - 2*ep) - 2*ep)*(-1/2 + pow(ep, -2)/2 + pow(ep, -1)/2 + pow(Pi, 2)/3 + ep*(-11/2 - pow(Pi, 2)/6 + (log(2)*pow(Pi, 2))/2 + (59*zeta(3))/12)))
+},
+
+{F({q1^2-2*p*q1,m^2+q1^2+q2^2-2*p*q1+2*p*q2-2*q1*q2,3*m^2+q2^2+4*p*q2},{1,1,1}), 
+pow(2, -2*(4 - 2*ep))*pow(exp(1), -2*ep*Euler)*pow(m, 2 - 4*ep)*pow(Pi, 4 - 2*(4 - 2*ep) - 2*ep)*(1/2 - pow(ep, -2) - 2*pow(ep, -1) - (11*pow(Pi, 2))/12 - ep*(-85/4 + (17*pow(Pi, 2))/24 + (3*log(2)*pow(Pi, 2))/2 + (181*zeta(3))/12))
+}
+}

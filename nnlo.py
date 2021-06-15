@@ -183,10 +183,9 @@ proj = SpinProj("In", 1, p1, p2, m, m, nu, -1, -3) * ColorProj(-1, -3);
 
 class nLnH(MapFunction):
     def map(self, e):
-        w0 = w(0)
-        if(not e.has(TR(w0))):
+        if(not e.has(TR(w))):
             return e
-        elif(e.match(TR(w0))):
+        elif(e.match(TR(w))):
             if e.has(m):
                 return nH * e
             else:
