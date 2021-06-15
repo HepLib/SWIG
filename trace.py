@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# python version for trace.cpp
+
 from HepLib import *
 
 mu = Index("mu")
@@ -10,5 +12,4 @@ m = Symbol("m")
 #note GAS(1) in gline, corresponds to the identity matrix
 gline = GAS(p1)*GAS(mu)*(GAS(p2)+m*GAS(1))*GAS(mu)
 trace = form(TR(gline))
-print(trace)
-print()
+co << trace << endl

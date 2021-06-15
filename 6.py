@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# python version for 6.cpp
+
 from HepLib import *
 
 A = Symbol("A")
@@ -80,8 +82,8 @@ class ClassFR(MapFunction):
 
 amps_FR = ClassFR()(amps[0])
     
-print("amps_FR: ")
-print(amps_FR);
+co << "amps_FR: " << endl
+co << amps_FR << endl << endl
     
 ampL = amps_FR
 ampR = IndexL2R(conjugate(ampL));
@@ -93,9 +95,8 @@ def SS2(p,m,i):
 M2 = ampL * ampR * SS1(p,me,-1) * SS2(P,-me,-3) * SS1(k,-mm,-2) * SS2(K,mm,-4);
 M2 = MatrixContract(M2);
     
-print("M2: ")
-print(M2)
-print()
+co << "M2: " << endl
+co << M2 << endl << endl
     
 set_form_using_dim4(True)
 letSP(p,me*me)
@@ -104,8 +105,8 @@ letSP(k,mm*mm)
 letSP(K,mm*mm)
 
 res = form(M2);
-print("Final M2:")
-print(factor(res.subs(me>>0)))
+co << "Final M2:" << endl
+co << factor(res.subs(me>>0)) << endl
     
     
 

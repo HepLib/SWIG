@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import os
+# python version for 8.cpp
+
 from HepLib import *
 
 q1 = Symbol("q1")
@@ -17,11 +18,11 @@ fire.Integrals = exvec([ expr("{2,1}") ])
 fire.WorkingDir = "IBPdir";
 fire.Reduce()
 
-print("Reduced Rules:")
-print(fire.Rules)
-print("Master Integrals:")
-print(fire.MIntegrals)
+ho << "Reduced Rules:" << endl
+ho << fire.Rules << endl << endl
+ho << "Master Integrals:" << endl
+ho << fire.MIntegrals << endl << endl
 
-os.system("rm -rf IBPdir")
+RunOS("rm -rf IBPdir")
 
 

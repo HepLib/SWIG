@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# python version for ct.cpp
+# python version for cw.cpp
 
 from HepLib import *
 
@@ -27,5 +27,4 @@ work.RunMAX = 5;
 
 work.Integrates()
 
-print(work.VE)
-print()
+ho << work.VE << endl

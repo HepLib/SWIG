@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# python version for 0.cpp
+# python version for 5.cpp
 
 from HepLib import *
 
@@ -29,18 +29,15 @@ res =  pow(e,4) / (4*pow(SP(q),2)) * tr1 * tr2;
 set_form_using_dim4(True)
 res = form(res)
 res = factor(res);
-print(res.subs(me>>0));
-print()
+co << res.subs(me>>0) << endl << endl
 
 set_form_using_su3(True)
 a = IndexCA("a")
 i = IndexCF("i")
 j = IndexCF("j");
 tr = TTR([a,a]);
-print("tr1 =", form(tr))
-tr = SUNT(a,i,j) * SUNT(a,j,i);
-print("tr2 =", form(tr))
+co << "tr1 = " << form(tr) << endl
+tr = SUNT(a,i,j) * SUNT(a,j,i)
+co << "tr2 = " << form(tr)  << endl
 tr = SUNT([a,a],i,i)
-print("tr3 =", form(tr))
-
-print()
+co << "tr3 = " << form(tr)  << endl

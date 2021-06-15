@@ -7,8 +7,6 @@ from HepLib import *
 cc = BOLDYELLOW
 
 e0 = expr("pow(x+y,3)")
-co = cout()
-ho = hout()
 ho << cc << "ho e0: " << RESET << e0 << endl
 ho << cc << "ho expanded: " << RESET << e0.expand() << endl << endl
 co << cc << "co e0: " << RESET << e0 << endl

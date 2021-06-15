@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# python version for exp.cpp
+
 from HepLib import *
 
 t = expr("vs")
@@ -33,5 +35,4 @@ set_Verbose(100)
         
 work.Evaluate(fp);
 
-print(work.VE)
-print()
+ho << work.VE << endl

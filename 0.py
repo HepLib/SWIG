@@ -8,25 +8,24 @@ x = symbol("x")
 y = symbol("y")
 z = symbol("z")
 r = expr("2/3")
-print("x ->", x, ", r ->", r)
+co << "x -> " <<  x << ", r -> " << r << endl
 
 e1 = r*x+2*y+pow(y,10)
-print("e1 ->", e1)
+co << "e1 -> " << e1 << endl
 e2 = (x+1)/(x-1)
-print("e2 ->", e2)
+co << "e2 -> " << e2 << endl
 e3 = sin(x+2*y)+3*z+41
-print("e3 ->", e3)
+co << "e3 -> " << e3 << endl
 e4 = e3+e2/exp(e1)
-print("e4 ->", e4)
+co << "e4 -> " << e4 << endl
 
 print()
 
 x = symbol("x")
 y = Symbol("y")
-print("x ->", x, ", y->", y)
+co << "x -> " << x << ", y-> " << y << endl
 e1 = conjugate(x);
-print("conjugate(x) ->", e1)
+co << "conjugate(x) -> " << e1 << endl
 e2 = conjugate(y)
-print("conjugate(y) ->", e2)
+co << "conjugate(y) -> " << e2 << endl
 
-print()

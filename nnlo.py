@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# python version for nnlo.cpp
+
 from HepLib import *
 
 model = """
@@ -80,18 +82,18 @@ def Amps():
         return ret
         
     amps = [ amp0, amp1, amp2 ]
-    print("Process Filter: [ ", end='')
+    ho << "Process Filter: [ "
     for amp in amps:
-        print(amp.size(), end=' ')
-    print("] :> [ ", end='')
+        ho << amp.size() << " "
+    ho << "] :> [ "
 
     amp0 = filter(amp0);
     amp1 = filter(amp1);
     amp2 = filter(amp2);
     
     for amp in amps:
-        print(amp.size(), end=' ')
-    print("]")
+        ho << amp.size() << " "
+    ho << "]" << endl
 
     if False:
         set_LineTeX(A, "photon")
@@ -229,8 +231,8 @@ Res0 = Res0.subs([ Z2>>RC.Z2("Q",m,2), zm>>RC.Zm(m,2)-1, Zas>>RC.Zas(2) ])
 Res0 = Res0.subs([ NF>>3, NA>>8, nH>>1, nL>>3 ])
 Res0 = series(series(Res0,ep,0),As,2)
 Res0 = Res0.subs([ log(m)>>log(mm)+log(smu), log(m/smu)>>log(mm), log(smu/m)>>-log(mm) ])
-print("Result @LO:")
-print(Res0, end='\n\n')
+ho << "Result @LO:" << endl
+ho << Res0 << endl << endl
 
 # -- MI --
 mistxt = file2expr("mis.txt")
@@ -253,8 +255,8 @@ Res1 = Res1.subs([ NF>>3, NA>>8, nH>>1, nL>>3 ])
 Res1 = series(series(Res1,ep,0),As,2)
 Res1 = Res1.subs([ log(m)>>log(mm)+log(smu), log(m/smu)>>log(mm),log(smu/m)>>-log(mm) ])
 Res1 = normal(Res1)
-print("Result @NLO:")
-print(Res1, end='\n\n')
+ho << "Result @NLO:" << endl
+ho << Res1 << endl << endl
 
 ## -- NNLO --
 ampN = amps[2]
@@ -271,10 +273,10 @@ Res2 = Res2.subs([ NF>>3, NA>>8, nH>>1, nL>>3 ])
 Res2 = series(series(Res2,ep,0),As,2)
 Res2 = Res2.subs([ log(m)>>log(mm)+log(smu), log(m/smu)>>log(mm), log(smu/m)>>-log(mm) ])
 Res2 = normal(Res2)
-print("Result @NNLO:")
-print(Res2, end='\n\n')
+ho << "Result @NNLO:" << endl
+ho << Res2 << endl << endl
 
-print("Final Result:")
+ho << "Final Result:"
 Res = Res0 + Res1 + Res2
 Res = normal(Res)
-print(Res, end='\n\n')
+ho << Res << endl << endl

@@ -27,6 +27,5 @@ work.RunMAX = 5;
 
 work.Integrates()
 
-print(work.VE)
-print()
+ho << work.VE << endl
   

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import os
+# python version for 9.cpp
+
 from HepLib import *
 
 k = Symbol("k")
@@ -22,6 +23,7 @@ fp.Prefactor = pow(I*pow(Pi,2-ep),-3) * pow(tgamma(1-ep),3)
 work = SecDec()
 set_Verbose(100)
 work.Evaluate(fp)
-print("Final Result & Error:")
-print(work.VE)
+
+ho << "Final Result & Error:" << endl
+ho << work.VE << endl
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# python version for 7.cpp
+
 from HepLib import *
 
 p = Vector("p")
@@ -9,15 +11,11 @@ r = Apart(expr,[q1],[p]);
 r1 = ApartIR2ex(r);
 r2 = ApartIR2F(r);
 
-print(r)
-print()
-print(r1)
-print()
-print(r2)
-print()
+co << r << endl << endl
+co << r1 << endl << endl
+co << r2 << endl << endl
     
 r3 = Apart(expr, [SP(q1),SP(p,q1)])
-print(r3)
-print()
+co << r3 << endl
 
 

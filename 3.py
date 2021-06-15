@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-# python version for 0.cpp
+# python version for 3.cpp
 
 from HepLib import *
 
 x = Symbol("x")
 y = Symbol("y");
 e0 = expr("x^4+x^3+x^2+x")
-print("e0 ->", e0)
+co << "e0 -> " << e0 << endl
 e1 = e0.subs([pow(x,w)>>pow(y,w+2)]);
-print("e1 ->",e1)
+co << "e1 -> " << e1 << endl
 
 class mapClass(MapFunction):
     def map(self, e):
@@ -19,6 +19,4 @@ class mapClass(MapFunction):
             return e.map(self)
 
 e2 = mapClass()(e0);
-print("e2 ->",e2)
-
-print()
+co << "e2 -> " << e2 << endl

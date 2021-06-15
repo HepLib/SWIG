@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# python version for nlo.cpp
+
 from HepLib import *
 
 model = """
@@ -73,7 +75,6 @@ def Amps():
                     cpii = exvec(cpii0)
                     cpii.sort()
                     if cpii==chk:
-                        print(amp)
                         ok = True
                         break
             if not ok:
